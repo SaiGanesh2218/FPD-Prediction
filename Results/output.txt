@@ -1,0 +1,551 @@
+loan_accounts - status values:
+status
+CLOSED       3200
+DISBURSED     800
+Name: count, dtype: int64
+
+loan_installments - status values:
+status
+PAID       46800
+PENDING     1200
+Name: count, dtype: int64
+
+Total first installment records : 4000
+Loans with completed window : 4000
+
+FPD Distribution:
+FPD
+0    3200
+1     800
+Name: count, dtype: int64
+
+FPD Distribution (%):
+FPD
+0    80.0
+1    20.0
+Name: proportion, dtype: float64
+
+Before sampling:
+FPD = 1 count : 800
+FPD = 0 count : 3200
+FPD
+0    3200
+1     800
+Name: count, dtype: int64
+FPD
+0    80.0
+1    20.0
+Name: proportion, dtype: float64
+
+Final sampled shape : (4000, 17)
+
+Using complete dataset (No Sampling)
+FPD
+0    3200
+1     800
+Name: count, dtype: int64
+
+FPD Distribution (%)
+FPD
+0    80.0
+1    20.0
+Name: proportion, dtype: float64
+
+Dataset Shape : (4000, 17)
+After member features : (4000, 54)
+After member features : (4000, 54)
+Collateral Coverage Ratio > 1: 0
+Collateral Coverage Ratio = 1: 0
+Collateral Coverage Ratio < 1: 4000
+
+Percentage Distribution
+collateral_coverage_ratio
+False    100.0
+Name: proportion, dtype: float64
+
+After loan product features: (4000, 63)
+After savings features : (4000, 76)
+['id', 'loan_id', 'installment_number', 'due_date', 'principal_amount', 'interest_amount', 'total_due', 'principal_paid', 'interest_paid', 'paid_at', 'status_x', 'created_at_x', 'updated_at_x', 'penalty_paid', 'closing_voucher_id', 'fpd_deadline', 'FPD', 'member_id', 'branch_id', 'loan_product_id', 'loan_cycle', 'loan_number', 'sanctioned_amount', 'interest_rate', 'outstanding_principal', 'disbursed_at', 'status_y', 'purpose', 'num_installments', 'repayment_frequency', 'processing_fee', 'insurance_fee', 'created_at_y', 'updated_at_y', 'emi_calculation_method', 'outstanding_interest', 'is_collateral_based', 'collateral_value', 'collateral_proof_urls', 'repayment_start_date', 'principal_per_installment', 'interest_per_installment', 'collection_frequency_cd', 'gender', 'occupation', 'caste_category', 'marital_status', 'member_age', 'member_tenure', 'is_aadhar_verified', 'prior_loan_count', 'avg_loan_gap_days', 'days_to_first_loan', 'loan_frequency_per_year', 'roi_tier_1_rate', 'min_loan_amount', 'max_loan_amount', 'thrift_eligibility_multiplier', 'repayment_due_day', 'loan_to_max_ratio', 'sanctioned_vs_max_diff', 'interest_burden', 'collateral_coverage_ratio', 'savings_balance', 'savings_tenure_months', 'savings_account_count', 'savings_to_loan_ratio', 'penalty_count', 'recent_penalty_flag', 'avg_monthly_deposit', 'deposit_consistency_months', 'last_savings_txn_date', 'days_since_last_savings_txn', 'deposit_growth_trend', 'deposit_to_withdrawal_ratio', 'inactive_savings_months']
+member_id True
+branch_id True
+After group features : (4000, 82)
+After KYC features : (4000, 90)
+After guarantor features : (4000, 96)
+After branch features : (4000, 102)
+After prior loan history features : (4000, 114)
+
+Model dataset shape : (4000, 70)
+Total features      : 69
+
+Missing values:
+collateral_value                     4000
+occupation                           4000
+avg_loan_gap_days                    4000
+avg_monthly_deposit                  4000
+days_since_last_savings_txn          4000
+deposit_growth_trend                 4000
+deposit_to_withdrawal_ratio          4000
+inactive_savings_months              4000
+kyc_status                           4000
+kyc_attempt_count                    4000
+kyc_days_to_review                   4000
+days_registration_to_kyc_approval    4000
+kyc_rejected_count                   4000
+days_kyc_to_loan_sanction            4000
+avg_guarantor_burden_tier            4000
+total_contingent_liability           4000
+guarantors_with_overdue              4000
+has_circular_guarantee               4000
+avg_active_guarantees_per_guar       4000
+ever_npa                             3200
+max_overdue_0_30                     3200
+max_overdue_31_60                    3200
+max_par30_amount                     3200
+max_par90_amount                     3200
+avg_installment_delay_days           4000
+pct_ontime_installments              4000
+days_since_last_loan_closed          4000
+avg_prior_loan_duration              4000
+dtype: int64
+Total Numerical Features : 56
+                          Feature  Standard Deviation
+                  interest_burden       107697.720848
+                sanctioned_amount         4487.405035
+           sanctioned_vs_max_diff         4487.405035
+                       member_age         4216.895686
+                 max_par30_amount          775.782527
+                max_overdue_31_60          736.591523
+                 max_par90_amount          675.397769
+                 max_overdue_0_30          668.827450
+               days_to_first_loan           12.401550
+     branch_avg_sanctioned_amount            2.000250
+            savings_to_loan_ratio            0.221358
+                loan_to_max_ratio            0.179496
+               group_default_rate            0.065392
+    thrift_eligibility_multiplier            0.000000
+                       loan_cycle            0.000000
+                 num_installments            0.000000
+                  roi_tier_1_rate            0.000000
+            savings_tenure_months            0.000000
+              recent_penalty_flag            0.000000
+                  savings_balance            0.000000
+                 prior_loan_count            0.000000
+          loan_frequency_per_year            0.000000
+                    member_tenure            0.000000
+               is_aadhar_verified            0.000000
+         group_avg_repayment_rate            0.000000
+           max_consecutive_missed            0.000000
+        last5_meetings_attendance            0.000000
+       deposit_consistency_months            0.000000
+                    penalty_count            0.000000
+            group_stability_ratio            0.000000
+                  guarantor_count            0.000000
+        kyc_completed_before_loan            0.000000
+         branch_product_diversity            0.000000
+             branch_approval_rate            0.000000
+        branch_avg_repayment_rate            0.000000
+                  branch_npa_rate            0.000000
+                         ever_npa            0.000000
+             prior_npa_loan_count            0.000000
+          max_overdue_amount_ever            0.000000
+            completed_loans_count            0.000000
+                avg_loan_gap_days                 NaN
+      days_since_last_savings_txn                 NaN
+          inactive_savings_months                 NaN
+                kyc_attempt_count                 NaN
+               kyc_days_to_review                 NaN
+days_registration_to_kyc_approval                 NaN
+               kyc_rejected_count                 NaN
+        days_kyc_to_loan_sanction                 NaN
+        avg_guarantor_burden_tier                 NaN
+       total_contingent_liability                 NaN
+          guarantors_with_overdue                 NaN
+   avg_active_guarantees_per_guar                 NaN
+       avg_installment_delay_days                 NaN
+          pct_ontime_installments                 NaN
+      days_since_last_loan_closed                 NaN
+          avg_prior_loan_duration                 NaN
+
+Feature Categories
+                              Feature  Standard Deviation         Category
+0                     interest_burden       107697.720848    Very High Std
+1                   sanctioned_amount         4487.405035         High Std
+2              sanctioned_vs_max_diff         4487.405035         High Std
+3                          member_age         4216.895686         High Std
+4                    max_par30_amount          775.782527         High Std
+5                   max_overdue_31_60          736.591523         High Std
+6                    max_par90_amount          675.397769         High Std
+7                    max_overdue_0_30          668.827450         High Std
+8                  days_to_first_loan           12.401550       Medium Std
+9        branch_avg_sanctioned_amount            2.000250       Medium Std
+10              savings_to_loan_ratio            0.221358          Low Std
+11                  loan_to_max_ratio            0.179496          Low Std
+12                 group_default_rate            0.065392          Low Std
+13      thrift_eligibility_multiplier            0.000000  Zero Std (Drop)
+14                         loan_cycle            0.000000  Zero Std (Drop)
+15                   num_installments            0.000000  Zero Std (Drop)
+16                    roi_tier_1_rate            0.000000  Zero Std (Drop)
+17              savings_tenure_months            0.000000  Zero Std (Drop)
+18                recent_penalty_flag            0.000000  Zero Std (Drop)
+19                    savings_balance            0.000000  Zero Std (Drop)
+20                   prior_loan_count            0.000000  Zero Std (Drop)
+21            loan_frequency_per_year            0.000000  Zero Std (Drop)
+22                      member_tenure            0.000000  Zero Std (Drop)
+23                 is_aadhar_verified            0.000000  Zero Std (Drop)
+24           group_avg_repayment_rate            0.000000  Zero Std (Drop)
+25             max_consecutive_missed            0.000000  Zero Std (Drop)
+26          last5_meetings_attendance            0.000000  Zero Std (Drop)
+27         deposit_consistency_months            0.000000  Zero Std (Drop)
+28                      penalty_count            0.000000  Zero Std (Drop)
+29              group_stability_ratio            0.000000  Zero Std (Drop)
+30                    guarantor_count            0.000000  Zero Std (Drop)
+31          kyc_completed_before_loan            0.000000  Zero Std (Drop)
+32           branch_product_diversity            0.000000  Zero Std (Drop)
+33               branch_approval_rate            0.000000  Zero Std (Drop)
+34          branch_avg_repayment_rate            0.000000  Zero Std (Drop)
+35                    branch_npa_rate            0.000000  Zero Std (Drop)
+36                           ever_npa            0.000000  Zero Std (Drop)
+37               prior_npa_loan_count            0.000000  Zero Std (Drop)
+38            max_overdue_amount_ever            0.000000  Zero Std (Drop)
+39              completed_loans_count            0.000000  Zero Std (Drop)
+40                  avg_loan_gap_days                 NaN   NaN Std (Drop)
+41        days_since_last_savings_txn                 NaN   NaN Std (Drop)
+42            inactive_savings_months                 NaN   NaN Std (Drop)
+43                  kyc_attempt_count                 NaN   NaN Std (Drop)
+44                 kyc_days_to_review                 NaN   NaN Std (Drop)
+45  days_registration_to_kyc_approval                 NaN   NaN Std (Drop)
+46                 kyc_rejected_count                 NaN   NaN Std (Drop)
+47          days_kyc_to_loan_sanction                 NaN   NaN Std (Drop)
+48          avg_guarantor_burden_tier                 NaN   NaN Std (Drop)
+49         total_contingent_liability                 NaN   NaN Std (Drop)
+50            guarantors_with_overdue                 NaN   NaN Std (Drop)
+51     avg_active_guarantees_per_guar                 NaN   NaN Std (Drop)
+52         avg_installment_delay_days                 NaN   NaN Std (Drop)
+53            pct_ontime_installments                 NaN   NaN Std (Drop)
+54        days_since_last_loan_closed                 NaN   NaN Std (Drop)
+55            avg_prior_loan_duration                 NaN   NaN Std (Drop)
+
+Category Counts
+Category
+Zero Std (Drop)    27
+NaN Std (Drop)     16
+High Std            7
+Low Std             3
+Medium Std          2
+Very High Std       1
+Name: count, dtype: int64
+
+NaN Std Features
+                              Feature  Standard Deviation        Category
+40                  avg_loan_gap_days                 NaN  NaN Std (Drop)
+41        days_since_last_savings_txn                 NaN  NaN Std (Drop)
+42            inactive_savings_months                 NaN  NaN Std (Drop)
+43                  kyc_attempt_count                 NaN  NaN Std (Drop)
+44                 kyc_days_to_review                 NaN  NaN Std (Drop)
+45  days_registration_to_kyc_approval                 NaN  NaN Std (Drop)
+46                 kyc_rejected_count                 NaN  NaN Std (Drop)
+47          days_kyc_to_loan_sanction                 NaN  NaN Std (Drop)
+48          avg_guarantor_burden_tier                 NaN  NaN Std (Drop)
+49         total_contingent_liability                 NaN  NaN Std (Drop)
+50            guarantors_with_overdue                 NaN  NaN Std (Drop)
+51     avg_active_guarantees_per_guar                 NaN  NaN Std (Drop)
+52         avg_installment_delay_days                 NaN  NaN Std (Drop)
+53            pct_ontime_installments                 NaN  NaN Std (Drop)
+54        days_since_last_loan_closed                 NaN  NaN Std (Drop)
+55            avg_prior_loan_duration                 NaN  NaN Std (Drop)
+
+Zero Std Features
+                          Feature  Standard Deviation         Category
+13  thrift_eligibility_multiplier                 0.0  Zero Std (Drop)
+14                     loan_cycle                 0.0  Zero Std (Drop)
+15               num_installments                 0.0  Zero Std (Drop)
+16                roi_tier_1_rate                 0.0  Zero Std (Drop)
+17          savings_tenure_months                 0.0  Zero Std (Drop)
+18            recent_penalty_flag                 0.0  Zero Std (Drop)
+19                savings_balance                 0.0  Zero Std (Drop)
+20               prior_loan_count                 0.0  Zero Std (Drop)
+21        loan_frequency_per_year                 0.0  Zero Std (Drop)
+22                  member_tenure                 0.0  Zero Std (Drop)
+23             is_aadhar_verified                 0.0  Zero Std (Drop)
+24       group_avg_repayment_rate                 0.0  Zero Std (Drop)
+25         max_consecutive_missed                 0.0  Zero Std (Drop)
+26      last5_meetings_attendance                 0.0  Zero Std (Drop)
+27     deposit_consistency_months                 0.0  Zero Std (Drop)
+28                  penalty_count                 0.0  Zero Std (Drop)
+29          group_stability_ratio                 0.0  Zero Std (Drop)
+30                guarantor_count                 0.0  Zero Std (Drop)
+31      kyc_completed_before_loan                 0.0  Zero Std (Drop)
+32       branch_product_diversity                 0.0  Zero Std (Drop)
+33           branch_approval_rate                 0.0  Zero Std (Drop)
+34      branch_avg_repayment_rate                 0.0  Zero Std (Drop)
+35                branch_npa_rate                 0.0  Zero Std (Drop)
+36                       ever_npa                 0.0  Zero Std (Drop)
+37           prior_npa_loan_count                 0.0  Zero Std (Drop)
+38        max_overdue_amount_ever                 0.0  Zero Std (Drop)
+39          completed_loans_count                 0.0  Zero Std (Drop)
+
+Near Zero Std Features
+None
+
+Very High Std Features
+           Feature  Standard Deviation       Category
+0  interest_burden       107697.720848  Very High Std
+
+Dropping NaN/Zero Std Features:
+['avg_loan_gap_days', 'days_since_last_savings_txn', 'inactive_savings_months', 'kyc_attempt_count', 'kyc_days_to_review', 'days_registration_to_kyc_approval', 'kyc_rejected_count', 'days_kyc_to_loan_sanction', 'avg_guarantor_burden_tier', 'total_contingent_liability', 'guarantors_with_overdue', 'avg_active_guarantees_per_guar', 'avg_installment_delay_days', 'pct_ontime_installments', 'days_since_last_loan_closed', 'avg_prior_loan_duration', 'thrift_eligibility_multiplier', 'loan_cycle', 'num_installments', 'roi_tier_1_rate', 'savings_tenure_months', 'recent_penalty_flag', 'savings_balance', 'prior_loan_count', 'loan_frequency_per_year', 'member_tenure', 'is_aadhar_verified', 'group_avg_repayment_rate', 'max_consecutive_missed', 'last5_meetings_attendance', 'deposit_consistency_months', 'penalty_count', 'group_stability_ratio', 'guarantor_count', 'kyc_completed_before_loan', 'branch_product_diversity', 'branch_approval_rate', 'branch_avg_repayment_rate', 'branch_npa_rate', 'ever_npa', 'prior_npa_loan_count', 'max_overdue_amount_ever', 'completed_loans_count']
+
+Applying Log Transformation:
+interest_burden  -->  interest_burden_log
+
+Final Dataset Summary
+Dataset Shape : (4000, 27)
+Features      : 26
+Minimum Std   : 0.065392
+Maximum Std   : 4487.41
+Average Std   : 1235.68
+Columns with all NaN values (7):
+['collateral_value', 'occupation', 'avg_monthly_deposit', 'deposit_growth_trend', 'deposit_to_withdrawal_ratio', 'kyc_status', 'has_circular_guarantee']
+
+Dataset shape after dropping: (4000, 20)
+
+is_collateral_based
+is_collateral_based
+False    4000
+Name: count, dtype: int64
+
+collateral_coverage_ratio
+collateral_coverage_ratio
+0    4000
+Name: count, dtype: int64
+
+gender
+gender
+FEMALE    4000
+Name: count, dtype: int64
+
+caste_category
+caste_category
+OC    1021
+BC    1017
+SC     982
+ST     980
+Name: count, dtype: int64
+
+marital_status
+marital_status
+MARRIED    2797
+SINGLE      806
+WIDOW       397
+Name: count, dtype: int64
+
+branch_type
+branch_type
+AREA    4000
+Name: count, dtype: int64
+
+One-Hot Encoding Columns:
+['is_collateral_based', 'collateral_coverage_ratio', 'gender', 'caste_category', 'marital_status', 'branch_type']
+
+Encoding Completed Successfully!
+Dataset Shape : (4000, 19)
+
+Remaining Categorical Columns:
+[]
+
+Missing values:
+max_overdue_0_30     3200
+max_overdue_31_60    3200
+max_par30_amount     3200
+max_par90_amount     3200
+dtype: int64
+Missing values before filling:
+max_overdue_0_30     3200
+max_overdue_31_60    3200
+max_par30_amount     3200
+max_par90_amount     3200
+dtype: int64
+
+Missing values after filling:
+max_overdue_0_30     0
+max_overdue_31_60    0
+max_par30_amount     0
+max_par90_amount     0
+dtype: int64
+
+Total missing values in dataset:
+0
+
+X_train shape : (3200, 18)
+X_test shape  : (800, 18)
+
+Train FPD distribution:
+FPD
+0    2560
+1     640
+Name: count, dtype: int64
+
+Test  FPD distribution:
+FPD
+0    640
+1    160
+Name: count, dtype: int64
+
+Logistic Regression
+ROC-AUC : 0.6117
+              precision    recall  f1-score   support
+
+  No Default       0.80      1.00      0.89       640
+     Default       0.00      0.00      0.00       160
+
+    accuracy                           0.80       800
+   macro avg       0.40      0.50      0.44       800
+weighted avg       0.64      0.80      0.71       800
+
+Decision Tree
+ROC-AUC : 0.5312
+              precision    recall  f1-score   support
+
+  No Default       0.81      0.81      0.81       640
+     Default       0.25      0.26      0.25       160
+
+    accuracy                           0.70       800
+   macro avg       0.53      0.53      0.53       800
+weighted avg       0.70      0.70      0.70       800
+
+Random Forest
+ROC-AUC : 0.6091
+              precision    recall  f1-score   support
+
+  No Default       0.80      0.90      0.85       640
+     Default       0.22      0.11      0.15       160
+
+    accuracy                           0.74       800
+   macro avg       0.51      0.51      0.50       800
+weighted avg       0.68      0.74      0.71       800
+
+XGBoost
+ROC-AUC : 0.6452
+              precision    recall  f1-score   support
+
+  No Default       0.80      0.95      0.87       640
+     Default       0.22      0.05      0.08       160
+
+    accuracy                           0.77       800
+   macro avg       0.51      0.50      0.48       800
+weighted avg       0.68      0.77      0.71       800
+
+TRAINING ARTIFICIAL NEURAL NETWORK
+Epoch 1/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 1s 5ms/step - accuracy: 0.7941 - loss: 0.5131 - val_accuracy: 0.7984 - val_loss: 0.4830
+Epoch 2/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8004 - loss: 0.4859 - val_accuracy: 0.7984 - val_loss: 0.4731
+Epoch 3/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 3ms/step - accuracy: 0.8004 - loss: 0.4712 - val_accuracy: 0.7984 - val_loss: 0.4687
+Epoch 4/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8004 - loss: 0.4675 - val_accuracy: 0.7984 - val_loss: 0.4667
+Epoch 5/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8004 - loss: 0.4651 - val_accuracy: 0.7984 - val_loss: 0.4627
+Epoch 6/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8008 - loss: 0.4601 - val_accuracy: 0.7984 - val_loss: 0.4673
+Epoch 7/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8004 - loss: 0.4616 - val_accuracy: 0.7984 - val_loss: 0.4630
+Epoch 8/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8004 - loss: 0.4577 - val_accuracy: 0.7984 - val_loss: 0.4589
+Epoch 9/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8004 - loss: 0.4538 - val_accuracy: 0.7984 - val_loss: 0.4603
+Epoch 10/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8004 - loss: 0.4539 - val_accuracy: 0.7984 - val_loss: 0.4614
+Epoch 11/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8004 - loss: 0.4535 - val_accuracy: 0.7984 - val_loss: 0.4636
+Epoch 12/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 3ms/step - accuracy: 0.8004 - loss: 0.4520 - val_accuracy: 0.7984 - val_loss: 0.4624
+Epoch 13/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8012 - loss: 0.4517 - val_accuracy: 0.7984 - val_loss: 0.4630
+Epoch 14/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8008 - loss: 0.4487 - val_accuracy: 0.7984 - val_loss: 0.4599
+Epoch 15/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8000 - loss: 0.4475 - val_accuracy: 0.7984 - val_loss: 0.4605
+Epoch 16/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8008 - loss: 0.4488 - val_accuracy: 0.7984 - val_loss: 0.4628
+Epoch 17/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8004 - loss: 0.4449 - val_accuracy: 0.7984 - val_loss: 0.4591
+Epoch 18/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8004 - loss: 0.4501 - val_accuracy: 0.7984 - val_loss: 0.4632
+Epoch 19/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8004 - loss: 0.4470 - val_accuracy: 0.7984 - val_loss: 0.4614
+Epoch 20/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8020 - loss: 0.4440 - val_accuracy: 0.7984 - val_loss: 0.4662
+Epoch 21/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.7992 - loss: 0.4416 - val_accuracy: 0.7984 - val_loss: 0.4649
+Epoch 22/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8012 - loss: 0.4427 - val_accuracy: 0.7984 - val_loss: 0.4658
+Epoch 23/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8008 - loss: 0.4409 - val_accuracy: 0.7984 - val_loss: 0.4636
+Epoch 24/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8004 - loss: 0.4427 - val_accuracy: 0.7984 - val_loss: 0.4644
+Epoch 25/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8020 - loss: 0.4398 - val_accuracy: 0.7984 - val_loss: 0.4649
+Epoch 26/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8012 - loss: 0.4420 - val_accuracy: 0.7984 - val_loss: 0.4660
+Epoch 27/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8000 - loss: 0.4446 - val_accuracy: 0.7984 - val_loss: 0.4649
+Epoch 28/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8016 - loss: 0.4406 - val_accuracy: 0.7984 - val_loss: 0.4659
+Epoch 29/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8008 - loss: 0.4400 - val_accuracy: 0.7984 - val_loss: 0.4686
+Epoch 30/30
+80/80 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - accuracy: 0.8008 - loss: 0.4387 - val_accuracy: 0.8000 - val_loss: 0.4703
+25/25 ━━━━━━━━━━━━━━━━━━━━ 0s 1ms/step 
+
+ROC-AUC : 0.6436
+              precision    recall  f1-score   support
+
+  No Default       0.80      1.00      0.89       640
+     Default       0.00      0.00      0.00       160
+
+    accuracy                           0.80       800
+   macro avg       0.40      0.50      0.44       800
+weighted avg       0.64      0.80      0.71       800
+
+MODEL COMPARISON
+                 Model   ROC-AUC
+0              XGBoost  0.645186
+1                  ANN  0.643633
+2  Logistic Regression  0.611719
+3        Random Forest  0.609097
+4        Decision Tree  0.531250
+
+Best Model : XGBoost
+
+Finished Model Comparison Successfully!
+
+Logistic Regression
+Test Accuracy : 0.8000 (80.00%)
+ROC-AUC       : 0.6117
+Somers D      : 0.223437
+
+Decision Tree
+Test Accuracy : 0.6963 (69.62%)
+ROC-AUC       : 0.5312
+Somers D      : 0.062500
+
+Random Forest
+Test Accuracy : 0.7412 (74.12%)
+ROC-AUC       : 0.6091
+Somers D      : 0.218193
+
+XGBoost
+Test Accuracy : 0.7738 (77.38%)
+ROC-AUC       : 0.6452
+Somers D      : 0.290371
+Total Records : 4000
+Defaults      : 800
+Non-defaults  : 3200
+Default Rate  : 20.00%
+MODEL COMPARISON
+              Model  ROC-AUC  Somers D
+            XGBoost   0.6452    0.2904
+                ANN   0.6436    0.2873
+Logistic Regression   0.6117    0.2234
+      Random Forest   0.6091    0.2182
+      Decision Tree   0.5312    0.0625
