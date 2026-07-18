@@ -18,7 +18,7 @@ Class Distribution   80% No Default / 20% Default
 Best Model           XGBoost — ROC-AUC: 0.6486
 
 📁 Repository Structure
-
+```
 fpd-prediction/
 │
 ├── main.py                        # Full pipeline — data extraction to model training
@@ -31,7 +31,7 @@ fpd-prediction/
 │
 ├── FPD_Research_Paper.docx        # Full research paper
 └── README.md                      # This file
-
+```
 
 🎯 Target Variable Construction(FPD
 
@@ -44,7 +44,7 @@ fpd-prediction/
 
 
 🗂️ Domain Features
-
+```
 Domain                   Features          Top Feature
 Prior Loan History       10                max_par30_amount
 Members                  8                 member_age
@@ -65,7 +65,7 @@ Random Fores t       0.6071     0.2142      74.75%
 Decision Tree        0.5258     0.0516      69.12%
 
 Best Model: XGBoost with ROC-AUC 0.6486 and Somers D 0.2972
-
+```
 
 🔧 Setup & Usage
 
@@ -84,7 +84,7 @@ Run Pipeline
 python main.py
 
 ⚠️ Requires active database connection to tenant_prabodh PostgreSQL server.
-
+```
 
 🏗️ Pipeline Architecture
 
@@ -124,15 +124,15 @@ Evaluation
 ├── Accuracy
 ├── Confusion Matrix
 └── Feature Importance
-
+```
 
 📈 Confusion Matrix — XGBoost
-
+```
                 Predicted: No Default    Predicted: Default
 Actual: No Default       617                    23
 Actual: Default          151                     9
 
-
+```
 True Negatives (Correctly identified No Default): 617
 True Positives (Correctly identified Default): 9
 False Negatives (Missed Defaults): 151 ← key risk
