@@ -1,16 +1,16 @@
-🏦 First Payment Default (FPD) Prediction — Microfinance Lending
+🏦 First Payment Default (FPD) Prediction Using Machine Learning
 
-Predicting whether a borrower will default on their first loan installment within a 5-day delinquency window, using a live cooperative banking PostgreSQL database.
+Predicting whether a borrower will default on their first loan installment within a 5-day delinquency window using a PostgreSQL database (tenant_prabodh) provided by Prabodh Technologies.
 
 📋 Project Overview
 
-This project develops a machine learning pipeline to predict First Payment Default (FPD) in microfinance and cooperative banking lending.
+This project develops a machine learning pipeline to predict First Payment Default (FPD) using a PostgreSQL database (tenant_prabodh) provided by Prabodh Technologies.
 
 FPD is defined as failure to pay the first loan installment within 5 days of the due date. It is the earliest and strongest signal of loan default risk, making it a critical metric for credit underwriting.
 
 Item                 Detail
-Institution Type     Cooperative Bank / Microfinance (SHG/JLG Group Lending)
-Database             PostgreSQL — tenant_prabodh
+Data Source          PostgreSQL database provided by Prabodh Technologies
+Database             tenant_prabodh
 Tables Used          15 out of 69 domain tables
 Total Records        4,000 loans (after FPD filter) 
 Target               FPD = 1 (Default) / FPD = 0 (No Default) 
@@ -83,12 +83,12 @@ Run Pipeline
 # Run the full pipeline
 python main.py
 
-⚠️ Requires active database connection to tenant_prabodh PostgreSQL server.
+⚠️ Requires access to the tenant_prabodh PostgreSQL database provided by Prabodh Technologies.
 ```
 
 🏗️ Pipeline Architecture
 
-Database (PostgreSQL)
+PostgreSQL Database (tenant_prabodh)
         │
         ▼
 Load Tables (SQLAlchemy)
@@ -161,4 +161,4 @@ Guide: Mr. Jagat Chaitanya Prabhala & Vikas Putcha
 
 📄 License
 
-This project is developed as part of an academic research exercise on microfinance credit risk modeling.
+This project was developed as part of an academic research project using a PostgreSQL database (tenant_prabodh) provided by Prabodh Technologies. The dataset and database schema were created by the company for research and development purposes.
